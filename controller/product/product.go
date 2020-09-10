@@ -21,8 +21,15 @@ func Index(c *gin.Context) {
 func Store(c *gin.Context) {
 
 	var product model.Product
-	product.Name = c.Request.FormValue("name")
-	product.Intro = c.Request.FormValue("intro")
+
+	if c.ShouldBind(&product) == nil {
+
+	}
+	//product.Name = c.Request.FormValue("name")
+	//product.Intro = c.Request.FormValue("intro")
+
+	fmt.Println(product)
+	fmt.Println(product.Name, product.Intro)
 
 	res, err := product.Insert()
 
