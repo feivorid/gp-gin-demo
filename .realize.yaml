@@ -16,3 +16,8 @@ schema:
       - .git
       - .realize
       - vendor
+server:
+  status: true
+  open: false
+  port: 9090
+  host: localhost
